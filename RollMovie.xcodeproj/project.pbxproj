@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		AB47264129F2F5330031D7C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47264029F2F5330031D7C8 /* AppDelegate.swift */; };
 		AB47264329F2F5330031D7C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47264229F2F5330031D7C8 /* SceneDelegate.swift */; };
-		AB47264529F2F5330031D7C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47264429F2F5330031D7C8 /* ViewController.swift */; };
+		AB47264529F2F5330031D7C8 /* RollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47264429F2F5330031D7C8 /* RollViewController.swift */; };
 		AB47264A29F2F5340031D7C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB47264929F2F5340031D7C8 /* Assets.xcassets */; };
 		AB47264D29F2F5340031D7C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB47264B29F2F5340031D7C8 /* LaunchScreen.storyboard */; };
 		AB47265629F2F74E0031D7C8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB47265529F2F74E0031D7C8 /* SnapKit */; };
 		AB47265929F2F7A10031D7C8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AB47265829F2F7A10031D7C8 /* Alamofire */; };
+		AB47265F29F3023D0031D7C8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47265E29F3023D0031D7C8 /* TabBarController.swift */; };
+		AB47266129F303E50031D7C8 /* FavoriteesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47266029F303E50031D7C8 /* FavoriteesViewController.swift */; };
+		AB47266329F343CE0031D7C8 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47266229F343CE0031D7C8 /* FavoritesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB47263D29F2F5330031D7C8 /* RollMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB47264029F2F5330031D7C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB47264229F2F5330031D7C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB47264429F2F5330031D7C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB47264429F2F5330031D7C8 /* RollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollViewController.swift; sourceTree = "<group>"; };
 		AB47264929F2F5340031D7C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB47264C29F2F5340031D7C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB47264E29F2F5340031D7C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB47265E29F3023D0031D7C8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AB47266029F303E50031D7C8 /* FavoriteesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteesViewController.swift; sourceTree = "<group>"; };
+		AB47266229F343CE0031D7C8 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				AB47265B29F2FABB0031D7C8 /* Application */,
-				AB47264429F2F5330031D7C8 /* ViewController.swift */,
+				AB47265D29F301B70031D7C8 /* Views */,
 				AB47265C29F2FAD60031D7C8 /* SupportingFiles */,
 			);
 			path = RollMovie;
@@ -82,6 +88,17 @@
 				AB47264E29F2F5340031D7C8 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		AB47265D29F301B70031D7C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB47265E29F3023D0031D7C8 /* TabBarController.swift */,
+				AB47264429F2F5330031D7C8 /* RollViewController.swift */,
+				AB47266229F343CE0031D7C8 /* FavoritesTableViewCell.swift */,
+				AB47266029F303E50031D7C8 /* FavoriteesViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB47264529F2F5330031D7C8 /* ViewController.swift in Sources */,
+				AB47264529F2F5330031D7C8 /* RollViewController.swift in Sources */,
+				AB47266329F343CE0031D7C8 /* FavoritesTableViewCell.swift in Sources */,
+				AB47266129F303E50031D7C8 /* FavoriteesViewController.swift in Sources */,
+				AB47265F29F3023D0031D7C8 /* TabBarController.swift in Sources */,
 				AB47264129F2F5330031D7C8 /* AppDelegate.swift in Sources */,
 				AB47264329F2F5330031D7C8 /* SceneDelegate.swift in Sources */,
 			);
