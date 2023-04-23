@@ -17,6 +17,8 @@
 		AB47265F29F3023D0031D7C8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47265E29F3023D0031D7C8 /* TabBarController.swift */; };
 		AB47266129F303E50031D7C8 /* FavoriteesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47266029F303E50031D7C8 /* FavoriteesViewController.swift */; };
 		AB47266329F343CE0031D7C8 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47266229F343CE0031D7C8 /* FavoritesTableViewCell.swift */; };
+		AB47266629F440880031D7C8 /* RollPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47266529F440880031D7C8 /* RollPresenter.swift */; };
+		AB47266929F441750031D7C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47266829F441750031D7C8 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		AB47265E29F3023D0031D7C8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		AB47266029F303E50031D7C8 /* FavoriteesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteesViewController.swift; sourceTree = "<group>"; };
 		AB47266229F343CE0031D7C8 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		AB47266529F440880031D7C8 /* RollPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollPresenter.swift; sourceTree = "<group>"; };
+		AB47266829F441750031D7C8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 		AB47263F29F2F5330031D7C8 /* RollMovie */ = {
 			isa = PBXGroup;
 			children = (
+				AB47266729F441670031D7C8 /* Models */,
+				AB47266429F440760031D7C8 /* Presenters */,
 				AB47265B29F2FABB0031D7C8 /* Application */,
 				AB47265D29F301B70031D7C8 /* Views */,
 				AB47265C29F2FAD60031D7C8 /* SupportingFiles */,
@@ -99,6 +105,22 @@
 				AB47266029F303E50031D7C8 /* FavoriteesViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AB47266429F440760031D7C8 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				AB47266529F440880031D7C8 /* RollPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		AB47266729F441670031D7C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB47266829F441750031D7C8 /* Movie.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,8 +204,10 @@
 				AB47264529F2F5330031D7C8 /* RollViewController.swift in Sources */,
 				AB47266329F343CE0031D7C8 /* FavoritesTableViewCell.swift in Sources */,
 				AB47266129F303E50031D7C8 /* FavoriteesViewController.swift in Sources */,
+				AB47266629F440880031D7C8 /* RollPresenter.swift in Sources */,
 				AB47265F29F3023D0031D7C8 /* TabBarController.swift in Sources */,
 				AB47264129F2F5330031D7C8 /* AppDelegate.swift in Sources */,
+				AB47266929F441750031D7C8 /* Movie.swift in Sources */,
 				AB47264329F2F5330031D7C8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
