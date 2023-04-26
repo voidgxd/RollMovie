@@ -19,6 +19,7 @@
 		AB47266329F343CE0031D7C8 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47266229F343CE0031D7C8 /* FavoritesTableViewCell.swift */; };
 		AB47266629F440880031D7C8 /* RollPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47266529F440880031D7C8 /* RollPresenter.swift */; };
 		AB47266929F441750031D7C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47266829F441750031D7C8 /* Movie.swift */; };
+		AB62E82329F9211800BA072F /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62E82229F9211800BA072F /* FavoritesPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		AB47266229F343CE0031D7C8 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		AB47266529F440880031D7C8 /* RollPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollPresenter.swift; sourceTree = "<group>"; };
 		AB47266829F441750031D7C8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		AB62E82229F9211800BA072F /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				AB47266529F440880031D7C8 /* RollPresenter.swift */,
+				AB62E82229F9211800BA072F /* FavoritesPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				AB47266129F303E50031D7C8 /* FavoriteesViewController.swift in Sources */,
 				AB47266629F440880031D7C8 /* RollPresenter.swift in Sources */,
 				AB47265F29F3023D0031D7C8 /* TabBarController.swift in Sources */,
+				AB62E82329F9211800BA072F /* FavoritesPresenter.swift in Sources */,
 				AB47264129F2F5330031D7C8 /* AppDelegate.swift in Sources */,
 				AB47266929F441750031D7C8 /* Movie.swift in Sources */,
 				AB47264329F2F5330031D7C8 /* SceneDelegate.swift in Sources */,

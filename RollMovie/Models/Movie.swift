@@ -13,23 +13,19 @@ struct Movie: Codable {
     let id: Int?
     let title: String?
     let overview: String?
-    let poster_path: String?
-    let release_date: String?
+    let posterPath: String?
+    let releaseDate: String?
     let voteAverage: Double?
 }
 
 // MARK: - Genre
 struct Genre: Codable {
-//    let id: Int?
     let name: String?
 }
 
-//enum CodingKeys: String, CodingKey {
-//        case genres
-//        case id
-//        case title
-//        case overview
-//        case posterPath = "poster_path"
-//        case releaseDate = "release_date"
-//        case voteAverage = "vote_average"
-//    }
+enum CodingKeys: String, CodingKey {
+        case genres, id, title
+        case posterPath = "poster_path"
+        case releaseDate = "release_date"
+        case voteAverage = "vote_average"
+    }

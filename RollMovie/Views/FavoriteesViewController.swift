@@ -7,7 +7,11 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class FavoritesViewController: UIViewController, FavoritesPresenterView {
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
 
     // MARK: - Properties
         
@@ -15,22 +19,30 @@ class FavoritesViewController: UIViewController {
             let tableView = UITableView()
             tableView.translatesAutoresizingMaskIntoConstraints = false
             tableView.separatorStyle = .none
-            tableView.backgroundColor = .white
+            tableView.backgroundColor = .black
             return tableView
         }()
-        
-        private let cellId = "FavoritesTableViewCell"
-        
-        // MARK: - Lifecycle
-        
-        override func viewDidLoad() {
+    
+    private let cellId = "FavoritesTableViewCell"
+    
+    lazy var presenter = FavoritesPresenter(with: self)
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
             super.viewDidLoad()
             
-            view.backgroundColor = .white
+            view.backgroundColor = .black
             title = "Favorites"
+            
+            
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .trash)
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(didTapFavorites))
             
             setupTableView()
         }
+    
+
         
         // MARK: - Helpers
         
@@ -46,7 +58,15 @@ class FavoritesViewController: UIViewController {
             tableView.dataSource = self
             tableView.delegate = self
         }
+  
+    @objc func didTapFavorites() {
+        
+        print(presenter.movies)
     }
+    
+    }
+
+
 
     // MARK: - UITableViewDataSource
 
@@ -54,17 +74,31 @@ class FavoritesViewController: UIViewController {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             // Вернуть количество ячеек в секции (в данном случае - 10)
-            return 10
+            presenter.movies.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             // Извлечь ячейку из пула и привести ее к типу FavoritesTableViewCell
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! FavoritesTableViewCell
-            
-            // Настроить содержимое ячейки
-            cell.backgroundColor = .white
-            
+                   let movie = presenter.movies[indexPath.row]
+            cell.movieImageView.loadImage(from: URL(string: "http://image.tmdb.org/t/p/w500\(movie.posterPath!)")!)
+            cell.titleLabel.text = movie.title
+            if let genreName = movie.genres?.first?.name {
+                cell.genreLabel.text = genreName
+            } else {
+                cell.genreLabel.text = ""
+            }
+            let year = String(movie.releaseDate!.prefix(4))
+            cell.yearLabel.text = year
+            cell.scoreLabel.text = String(movie.voteAverage!)
             return cell
+        }
+        
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                presenter.removeMovie(atIndex: indexPath.row)
+                print(presenter.movies)
+            }
         }
     }
 

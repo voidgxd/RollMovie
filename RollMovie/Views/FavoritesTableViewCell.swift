@@ -12,7 +12,7 @@ class FavoritesTableViewCell: UITableViewCell {
 
     // MARK: - Properties
 
-    private let movieImageView: UIImageView = {
+    let movieImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .gray
@@ -26,7 +26,7 @@ class FavoritesTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = .black
+        label.textColor = .white
         label.text = "The Godfather"
         return label
     }()
@@ -35,7 +35,7 @@ class FavoritesTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = .darkGray
+        label.textColor = .white
         label.text = "Crime"
         return label
     }()
@@ -44,7 +44,7 @@ class FavoritesTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = .black
+        label.textColor = .white
         label.text = "9.2"
         return label
     }()
@@ -53,7 +53,7 @@ class FavoritesTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = .darkGray
+        label.textColor = .white
         label.text = "1972"
         return label
     }()
@@ -91,15 +91,16 @@ class FavoritesTableViewCell: UITableViewCell {
 
         scoreLabel.snp.makeConstraints { make in
             make.top.equalTo(genreLabel.snp.bottom).offset(4)
-            make.leading.equalTo(movieImageView.snp.trailing).offset(16)
+            make.trailing.equalToSuperview().inset(16)
         }
 
         yearLabel.snp.makeConstraints { make in
             make.top.equalTo(genreLabel.snp.bottom).offset(4)
-            make.trailing.equalToSuperview().inset(16)
+            make.leading.equalTo(movieImageView.snp.trailing).offset(16)
         }
     }
 
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

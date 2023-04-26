@@ -70,13 +70,15 @@ class RollPresenter {
                 return
             }
             do {
-                guard let movie = try? JSONDecoder().decode(Movie.self, from: data)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let movie = try? decoder.decode(Movie.self, from: data)
 
                 else {
                     print("error")
                     return
                 }
-                guard (movie.title != nil), (movie.release_date != nil), movie.poster_path != nil
+                guard (movie.title != nil), (movie.releaseDate != nil), movie.posterPath != nil
                 else {
                     self.getMovie()
                     return
@@ -87,6 +89,34 @@ class RollPresenter {
             }
         }
 
+    }
+    
+    func saveMovieToUserDefaults(movie: Movie) {
+        let userDefaults = UserDefaults.standard
+        
+        // проверяем, есть ли уже фильм в массиве
+        if let savedMoviesData = userDefaults.object(forKey: "savedMovies") as? Data,
+           var savedMovies = try? PropertyListDecoder().decode([Movie].self, from: savedMoviesData),
+           savedMovies.contains(where: { $0.title == movie.title }) {
+            return // если фильм уже есть в массиве, то выходим из функции
+        }
+        
+        // добавляем фильм в массив
+        var moviesToSave = [Movie]()
+        if let savedMoviesData = userDefaults.object(forKey: "savedMovies") as? Data,
+           let savedMovies = try? PropertyListDecoder().decode([Movie].self, from: savedMoviesData) {
+            moviesToSave = savedMovies
+        }
+        moviesToSave.append(movie)
+        
+        // сохраняем массив фильмов в UserDefaults
+        if let moviesData = try? PropertyListEncoder().encode(moviesToSave) {
+            userDefaults.set(moviesData, forKey: "savedMovies")
+        }
+        if let value = UserDefaults.standard.object(forKey: "savedMovies") {
+//            print("сохраняю\(value)")
+        }
+        NotificationCenter.default.post(name: Notification.Name("NewMovieAdded"), object: nil)
     }
     
  
