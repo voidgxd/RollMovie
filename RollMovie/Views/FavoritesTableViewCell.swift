@@ -62,7 +62,8 @@ class FavoritesTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
+        contentView.backgroundColor = .black
         contentView.addSubview(movieImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(genreLabel)

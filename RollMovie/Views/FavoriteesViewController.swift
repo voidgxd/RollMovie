@@ -35,10 +35,6 @@ class FavoritesViewController: UIViewController, FavoritesPresenterView {
             view.backgroundColor = .black
             title = "Favorites"
             
-            
-//            navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .trash)
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(didTapFavorites))
-            
             setupTableView()
         }
     
@@ -59,10 +55,6 @@ class FavoritesViewController: UIViewController, FavoritesPresenterView {
             tableView.delegate = self
         }
   
-    @objc func didTapFavorites() {
-        
-        print(presenter.movies)
-    }
     
     }
 
@@ -92,6 +84,20 @@ class FavoritesViewController: UIViewController, FavoritesPresenterView {
             cell.yearLabel.text = year
             cell.scoreLabel.text = String(movie.voteAverage!)
             return cell
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+            let movie = presenter.movies[indexPath.row]
+            let detailViewController = UINavigationController(rootViewController: DetailViewController(movie: movie))
+            // Установить анимацию перехода
+            detailViewController.modalPresentationStyle = .fullScreen
+            detailViewController.modalTransitionStyle = .flipHorizontal
+
+            // Показать DetailViewController с анимацией
+            present(detailViewController, animated: true, completion: nil)
+        
         }
         
         func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
